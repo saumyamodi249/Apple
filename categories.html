@@ -1,0 +1,1320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - MyApple</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="bi bi-apple"></i> MyApple
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="categories.html">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item" id="navAuth">
+                        <a class="nav-link" href="login.html">Login</a>
+                    </li>
+                    <li class="nav-item" id="navAuthSignup">
+                        <a class="nav-link btn btn-primary text-white ms-2" href="signup.html">Sign Up</a>
+                    </li>
+                    <li class="nav-item dropdown" id="navProfile" style="display: none;">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-person-circle"></i> <span id="profileNameSpan">Profile</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="profile.html"><i class="bi bi-person"></i> Profile</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item text-danger" href="#" id="navLogout"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="payment.html">
+                            <i class="bi bi-cart3"></i> Cart <span class="badge bg-danger" id="cartCount">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header py-5 mt-5 bg-light">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-3">Our Products</h1>
+            <p class="lead text-muted">Discover the latest technology</p>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="py-3 bg-white border-bottom">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-outline-primary active" data-category="all">All Products</button>
+                        <button type="button" class="btn btn-outline-primary" data-category="iphone">iPhone</button>
+                        <button type="button" class="btn btn-outline-primary" data-category="mac">Mac</button>
+                        <button type="button" class="btn btn-outline-primary" data-category="ipad">iPad</button>
+                        <button type="button" class="btn btn-outline-primary" data-category="watch">Watch</button>
+                        <button type="button" class="btn btn-outline-primary" data-category="airpods">AirPods</button>
+                    </div>
+                </div>
+                <div class="col-md-6 text-end">
+                    <select class="form-select d-inline-block w-auto" id="sortSelect">
+                        <option value="default">Sort by: Default</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="name">Name: A to Z</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-4" id="productsGrid">
+                <!-- iPhone 17 Models -->
+                <!-- Product 1 -->
+                <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="iphone" data-price="99900" data-name="iPhone 17">
+                    <div class="product-card h-100">
+                        <div class="product-image">
+                            <img src="Iphone/I17/17.jpeg.webp" alt="iPhone 17" class="img-fluid">
+                        </div>
+                        <div class="product-info p-3">
+                            <h5>iPhone 17</h5>
+                            <p class="text-muted small mb-2">128GB - Titanium Gray</p>
+                            <p class="price fw-bold text-primary mb-3">₹99,900</p>
+                            <button class="btn btn-primary w-100 add-to-cart" data-product="iPhone 17" data-price="99900">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="iphone" data-price="109900" data-name="iPhone 17 Air">
+                    <div class="product-card h-100">
+                        <div class="product-image">
+                            <img src="Iphone/I17/17 air.jpeg.webp" alt="iPhone 17 Air" class="img-fluid">
+                        </div>
+                        <div class="product-info p-3">
+                            <h5>iPhone 17 Air</h5>
+                            <p class="text-muted small mb-2">128GB - Rose Gold</p>
+                            <p class="price fw-bold text-primary mb-3">₹1,09,900</p>
+                            <button class="btn btn-primary w-100 add-to-cart" data-product="iPhone 17 Air" data-price="109900">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="iphone" data-price="119900" data-name="iPhone 17 Pro">
+                    <div class="product-card h-100">
+                        <div class="product-image">
+                            <img src="Iphone/I17/17 pro.jpeg.webp" alt="iPhone 17 Pro" class="img-fluid">
+                        </div>
+                        <div class="product-info p-3">
+                            <h5>iPhone 17 Pro</h5>
+                            <p class="text-muted small mb-2">256GB - Titanium Blue</p>
+                            <p class="price fw-bold text-primary mb-3">₹1,19,900</p>
+                            <button class="btn btn-primary w-100 add-to-cart" data-product="iPhone 17 Pro" data-price="119900">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="iphone" data-price="129900" data-name="iPhone 17 Pro Max">
+                    <div class="product-card h-100">
+                        <div class="product-image">
+                            <img src="Iphone/I17/17 pro max.jpeg.webp" alt="iPhone 17 Pro Max" class="img-fluid">
+                        </div>
+                        <div class="product-info p-3">
+                            <h5>iPhone 17 Pro Max</h5>
+                            <p class="text-muted small mb-2">256GB - Natural Titanium</p>
+                            <p class="price fw-bold text-primary mb-3">₹1,29,900</p>
+                            <button class="btn btn-primary w-100 add-to-cart" data-product="iPhone 17 Pro Max" data-price="129900">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- iPhone 16 Models -->
+                <!-- Product 5 -->
+                <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="iphone" data-price="89900" data-name="iPhone 16">
+                    <div class="product-card h-100">
+                        <div class="product-image">
+                            <img src="Iphone/I16/16.jpeg.webp" alt="iPhone 16" class="img-fluid">
+                        </div>
+                        <div class="product-info p-3">
+                            <h5>iPhone 16</h5>
+                            <p class="text-muted small mb-2">128GB - Black</p>
+                            <p class="price fw-bold text-primary mb-3">₹89,900</p>
+                            <button class="btn btn-primary w-100 add-to-cart" data-product="iPhone 16" data-price="89900">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="iphone" data-price="99900" data-name="iPhone 16 Air">
+                    <div class="product-card h-100">
+                        <div class="product-image">
+                            <img src="Iphone/I16/16 air.jpeg.webp" alt="iPhone 16 Air" class="img-fluid">
+                        </div>
+                        <div class="product-info p-3">
+                            <h5>iPhone 16 Air</h5>
+                            <p class="text-muted small mb-2">128GB - White</p>
+                            <p class="price fw-bold text-primary mb-3">₹99,900</p>
+                            <button class="btn btn-primary w-100 add-to-cart" data-product="iPhone 16 Air" data-price="99900">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 7 -->
+                <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="iphone" data-price="109900" data-name="iPhone 16 Pro">
+                    <div class="product-card h-100">
+                        <div class="product-image">
+                            <img src="Iphone/I16/16 pro.jpeg.webp" alt="iPhone 16 Pro" class="img-fluid">
+                        </div>
+                        <div class="product-info p-3">
+                            <h5>iPhone 16 Pro</h5>
+                            <p class="text-muted small mb-2">256GB - Space Black</p>
+                            <p class="price fw-bold text-primary mb-3">₹1,09,900</p>
+                            <button class="btn btn-primary w-100 add-to-cart" data-product="iPhone 16 Pro" data-price="109900">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 8 -->
+                <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="iphone" data-price="119900" data-name="iPhone 16 Pro Max">
+                    <div class="product-card h-100">
+                        <div class="product-image">
+                            <img src="Iphone/I16/16 pro max.jpeg.webp" alt="iPhone 16 Pro Max" class="img-fluid">
+                        </div>
+                        <div class="product-info p-3">
+                            <h5>iPhone 16 Pro Max</h5>
+                            <p class="text-muted small mb-2">256GB - Desert Titanium</p>
+                            <p class="price fw-bold text-primary mb-3">₹1,19,900</p>
+                            <button class="btn btn-primary w-100 add-to-cart" data-product="iPhone 16 Pro Max" data-price="119900">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- iPhone 15 Models -->
+                <!-- Product 9 -->
+                <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="iphone" data-price="79900" data-name="iPhone 15">
+                    <div class="product-card h-100">
+                        <div class="product-image">
+                            <img src="Iphone/I15/15.jpeg.webp" alt="iPhone 15" class="img-fluid">
+                        </div>
+                        <div class="product-info p-3">
+                            <h5>iPhone 15</h5>
+                            <p class="text-muted small mb-2">128GB - Natural Titanium</p>
+                            <p class="price fw-bold text-primary mb-3">₹79,900</p>
+                            <button class="btn btn-primary w-100 add-to-cart" data-product="iPhone 15" data-price="79900">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 10 -->
+                <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="iphone" data-price="89900" data-name="iPhone 15 Plus">
+                    <div class="product-card h-100">
+                        <div class="product-image">
+                            <img src="Iphone/I15/15 plus.jpeg.webp" alt="iPhone 15 Plus" class="img-fluid">
+                        </div>
+                        <div class="product-info p-3">
+                            <h5>iPhone 15 Plus</h5>
+                            <p class="text-muted small mb-2">128GB - Blue</p>
+                            <p class="price fw-bold text-primary mb-3">₹89,900</p>
+                            <button class="btn btn-primary w-100 add-to-cart" data-product="iPhone 15 Plus" data-price="89900">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 11 -->
+                <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="iphone" data-price="99900" data-name="iPhone 15 Pro">
+                    <div class="product-card h-100">
+                        <div class="product-image">
+                            <img src="Iphone/I15/15 pro.jpeg.webp" alt="iPhone 15 Pro" class="img-fluid">
+                        </div>
+                        <div class="product-info p-3">
+                            <h5>iPhone 15 Pro</h5>
+                            <p class="text-muted small mb-2">256GB - Blue Titanium</p>
+                            <p class="price fw-bold text-primary mb-3">₹99,900</p>
+                            <button class="btn btn-primary w-100 add-to-cart" data-product="iPhone 15 Pro" data-price="99900">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 12 -->
+                <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="iphone" data-price="109900" data-name="iPhone 15 Pro Max">
+                    <div class="product-card h-100">
+                        <div class="product-image">
+                            <img src="Iphone/I15/15 pro max.jpeg.webp" alt="iPhone 15 Pro Max" class="img-fluid">
+                        </div>
+                        <div class="product-info p-3">
+                            <h5>iPhone 15 Pro Max</h5>
+                            <p class="text-muted small mb-2">256GB - Natural Titanium</p>
+                            <p class="price fw-bold text-primary mb-3">₹1,09,900</p>
+                            <button class="btn btn-primary w-100 add-to-cart" data-product="iPhone 15 Pro Max" data-price="109900">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- iPhone 14 Models -->
+                <!-- Product 13 -->
+                <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="iphone" data-price="69900" data-name="iPhone 14">
+                    <div class="product-card h-100">
+                        <div class="product-image">
+                            <img src="Iphone/I14/14.jpeg.webp" alt="iPhone 14" class="img-fluid">
+                        </div>
+                        <div class="product-info p-3">
+                            <h5>iPhone 14</h5>
+                            <p class="text-muted small mb-2">128GB - Midnight</p>
+                            <p class="price fw-bold text-primary mb-3">₹69,900</p>
+                            <button class="btn btn-primary w-100 add-to-cart" data-product="iPhone 14" data-price="69900">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 14 -->
+                <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="iphone" data-price="79900" data-name="iPhone 14 Plus">
+                    <div class="product-card h-100">
+                        <div class="product-image">
+                            <img src="Iphone/I14/14 plus.jpeg.webp" alt="iPhone 14 Plus" class="img-fluid">
+                        </div>
+                        <div class="product-info p-3">
+                            <h5>iPhone 14 Plus</h5>
+                            <p class="text-muted small mb-2">128GB - Starlight</p>
+                            <p class="price fw-bold text-primary mb-3">₹79,900</p>
+                            <button class="btn btn-primary w-100 add-to-cart" data-product="iPhone 14 Plus" data-price="79900">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 15 -->
+                <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="iphone" data-price="89900" data-name="iPhone 14 Pro">
+                    <div class="product-card h-100">
+                        <div class="product-image">
+                            <img src="Iphone/I14/14 pro.jpeg.webp" alt="iPhone 14 Pro" class="img-fluid">
+                        </div>
+                        <div class="product-info p-3">
+                            <h5>iPhone 14 Pro</h5>
+                            <p class="text-muted small mb-2">256GB - Deep Purple</p>
+                            <p class="price fw-bold text-primary mb-3">₹89,900</p>
+                            <button class="btn btn-primary w-100 add-to-cart" data-product="iPhone 14 Pro" data-price="89900">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 16 -->
+                <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="iphone" data-price="99900" data-name="iPhone 14 Pro Max">
+                    <div class="product-card h-100">
+                        <div class="product-image">
+                            <img src="Iphone/I14/14 pro max.jpeg.webp" alt="iPhone 14 Pro Max" class="img-fluid">
+                        </div>
+                        <div class="product-info p-3">
+                            <h5>iPhone 14 Pro Max</h5>
+                            <p class="text-muted small mb-2">256GB - Gold</p>
+                            <p class="price fw-bold text-primary mb-3">₹99,900</p>
+                            <button class="btn btn-primary w-100 add-to-cart" data-product="iPhone 14 Pro Max" data-price="99900">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- iPhone 13 Models -->
+                <!-- Product 17 -->
+                <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="iphone" data-price="59900" data-name="iPhone 13">
+                    <div class="product-card h-100">
+                        <div class="product-image">
+                            <img src="Iphone/I13/13.jpeg.webp" alt="iPhone 13" class="img-fluid">
+                        </div>
+                        <div class="product-info p-3">
+                            <h5>iPhone 13</h5>
+                            <p class="text-muted small mb-2">128GB - Blue</p>
+                            <p class="price fw-bold text-primary mb-3">₹59,900</p>
+                            <button class="btn btn-primary w-100 add-to-cart" data-product="iPhone 13" data-price="59900">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 18 -->
+                <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="iphone" data-price="69900" data-name="iPhone 13 Plus">
+                    <div class="product-card h-100">
+                        <div class="product-image">
+                            <img src="Iphone/I13/13 plus.jpeg.webp" alt="iPhone 13 Plus" class="img-fluid">
+                        </div>
+                        <div class="product-info p-3">
+                            <h5>iPhone 13 Plus</h5>
+                            <p class="text-muted small mb-2">128GB - Pink</p>
+                            <p class="price fw-bold text-primary mb-3">₹69,900</p>
+                            <button class="btn btn-primary w-100 add-to-cart" data-product="iPhone 13 Plus" data-price="69900">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 19 -->
+                <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="iphone" data-price="79900" data-name="iPhone 13 Pro">
+                    <div class="product-card h-100">
+                        <div class="product-image">
+                            <img src="Iphone/I13/13 pro.jpeg.webp" alt="iPhone 13 Pro" class="img-fluid">
+                        </div>
+                        <div class="product-info p-3">
+                            <h5>iPhone 13 Pro</h5>
+                            <p class="text-muted small mb-2">256GB - Graphite</p>
+                            <p class="price fw-bold text-primary mb-3">₹79,900</p>
+                            <button class="btn btn-primary w-100 add-to-cart" data-product="iPhone 13 Pro" data-price="79900">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 20 -->
+                <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="iphone" data-price="89900" data-name="iPhone 13 Pro Max">
+                    <div class="product-card h-100">
+                        <div class="product-image">
+                            <img src="Iphone/I13/13 pro max.jpeg.webp" alt="iPhone 13 Pro Max" class="img-fluid">
+                        </div>
+                        <div class="product-info p-3">
+                            <h5>iPhone 13 Pro Max</h5>
+                            <p class="text-muted small mb-2">256GB - Sierra Blue</p>
+                            <p class="price fw-bold text-primary mb-3">₹89,900</p>
+                            <button class="btn btn-primary w-100 add-to-cart" data-product="iPhone 13 Pro Max" data-price="89900">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Watch (category-wise, descending) -->
+                <!-- Ultra -->
+                <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="watch" data-price="99900" data-name="Apple Watch Ultra 3">
+                    <div class="product-card h-100">
+                        <div class="product-image">
+                            <img src="watch/ultra/ultra 3.jpeg.webp" alt="Apple Watch Ultra 3" class="img-fluid">
+                        </div>
+                        <div class="product-info p-3">
+                            <h5>Apple Watch Ultra 3</h5>
+                            <p class="text-muted small mb-2">49mm Titanium Case</p>
+                            <p class="price fw-bold text-primary mb-3">₹99,900</p>
+                            <button class="btn btn-primary w-100 add-to-cart" data-product="Apple Watch Ultra 3" data-price="99900">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="watch" data-price="89900" data-name="Apple Watch Ultra 2">
+                    <div class="product-card h-100">
+                        <div class="product-image">
+                            <img src="watch/ultra/ultra 2.jpeg.webp" alt="Apple Watch Ultra 2" class="img-fluid">
+                        </div>
+                        <div class="product-info p-3">
+                            <h5>Apple Watch Ultra 2</h5>
+                            <p class="text-muted small mb-2">49mm Titanium Case</p>
+                            <p class="price fw-bold text-primary mb-3">₹89,900</p>
+                            <button class="btn btn-primary w-100 add-to-cart" data-product="Apple Watch Ultra 2" data-price="89900">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="watch" data-price="79900" data-name="Apple Watch Ultra 1">
+                    <div class="product-card h-100">
+                        <div class="product-image">
+                            <img src="watch/ultra/ultra 1.jpeg.webp" alt="Apple Watch Ultra 1" class="img-fluid">
+                        </div>
+                        <div class="product-info p-3">
+                            <h5>Apple Watch Ultra 1</h5>
+                            <p class="text-muted small mb-2">49mm Titanium Case</p>
+                            <p class="price fw-bold text-primary mb-3">₹79,900</p>
+                            <button class="btn btn-primary w-100 add-to-cart" data-product="Apple Watch Ultra 1" data-price="79900">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Series -->
+                <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="watch" data-price="49900" data-name="Apple Watch Series 11">
+                    <div class="product-card h-100">
+                        <div class="product-image">
+                            <img src="watch/series/series 11.jpeg.webp" alt="Apple Watch Series 11" class="img-fluid">
+                        </div>
+                        <div class="product-info p-3">
+                            <h5>Apple Watch Series 11</h5>
+                            <p class="text-muted small mb-2">GPS - 45mm</p>
+                            <p class="price fw-bold text-primary mb-3">₹49,900</p>
+                            <button class="btn btn-primary w-100 add-to-cart" data-product="Apple Watch Series 11" data-price="49900">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="watch" data-price="45900" data-name="Apple Watch Series 10">
+                    <div class="product-card h-100">
+                        <div class="product-image">
+                            <img src="watch/series/series 10.jpeg.webp" alt="Apple Watch Series 10" class="img-fluid">
+                        </div>
+                        <div class="product-info p-3">
+                            <h5>Apple Watch Series 10</h5>
+                            <p class="text-muted small mb-2">GPS - 45mm</p>
+                            <p class="price fw-bold text-primary mb-3">₹45,900</p>
+                            <button class="btn btn-primary w-100 add-to-cart" data-product="Apple Watch Series 10" data-price="45900">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="watch" data-price="41900" data-name="Apple Watch Series 9">
+                    <div class="product-card h-100">
+                        <div class="product-image">
+                            <img src="watch/series/series 9.jpeg.webp" alt="Apple Watch Series 9" class="img-fluid">
+                        </div>
+                        <div class="product-info p-3">
+                            <h5>Apple Watch Series 9</h5>
+                            <p class="text-muted small mb-2">GPS - 45mm</p>
+                            <p class="price fw-bold text-primary mb-3">₹41,900</p>
+                            <button class="btn btn-primary w-100 add-to-cart" data-product="Apple Watch Series 9" data-price="41900">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="watch" data-price="39900" data-name="Apple Watch Series 8">
+                    <div class="product-card h-100">
+                        <div class="product-image">
+                            <img src="watch/series/series 8.jpeg.webp" alt="Apple Watch Series 8" class="img-fluid">
+                        </div>
+                        <div class="product-info p-3">
+                            <h5>Apple Watch Series 8</h5>
+                            <p class="text-muted small mb-2">GPS - 45mm</p>
+                            <p class="price fw-bold text-primary mb-3">₹39,900</p>
+                            <button class="btn btn-primary w-100 add-to-cart" data-product="Apple Watch Series 8" data-price="39900">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="watch" data-price="34900" data-name="Apple Watch Series 7">
+                    <div class="product-card h-100">
+                        <div class="product-image">
+                            <img src="watch/series/series 7.jpeg.webp" alt="Apple Watch Series 7" class="img-fluid">
+                        </div>
+                        <div class="product-info p-3">
+                            <h5>Apple Watch Series 7</h5>
+                            <p class="text-muted small mb-2">GPS - 45mm</p>
+                            <p class="price fw-bold text-primary mb-3">₹34,900</p>
+                            <button class="btn btn-primary w-100 add-to-cart" data-product="Apple Watch Series 7" data-price="34900">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="watch" data-price="29900" data-name="Apple Watch Series 6">
+                    <div class="product-card h-100">
+                        <div class="product-image">
+                            <img src="watch/series/series 6.jpeg.webp" alt="Apple Watch Series 6" class="img-fluid">
+                        </div>
+                        <div class="product-info p-3">
+                            <h5>Apple Watch Series 6</h5>
+                            <p class="text-muted small mb-2">GPS - 44mm</p>
+                            <p class="price fw-bold text-primary mb-3">₹29,900</p>
+                            <button class="btn btn-primary w-100 add-to-cart" data-product="Apple Watch Series 6" data-price="29900">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SE -->
+                <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="watch" data-price="29900" data-name="Apple Watch SE 3">
+                    <div class="product-card h-100">
+                        <div class="product-image">
+                            <img src="watch/SE/se 3.jpeg.webp" alt="Apple Watch SE 3" class="img-fluid">
+                        </div>
+                        <div class="product-info p-3">
+                            <h5>Apple Watch SE 3</h5>
+                            <p class="text-muted small mb-2">GPS - 44mm</p>
+                            <p class="price fw-bold text-primary mb-3">₹29,900</p>
+                            <button class="btn btn-primary w-100 add-to-cart" data-product="Apple Watch SE 3" data-price="29900">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="watch" data-price="24900" data-name="Apple Watch SE 2">
+                    <div class="product-card h-100">
+                        <div class="product-image">
+                            <img src="watch/SE/se 2.jpeg.webp" alt="Apple Watch SE 2" class="img-fluid">
+                        </div>
+                        <div class="product-info p-3">
+                            <h5>Apple Watch SE 2</h5>
+                            <p class="text-muted small mb-2">GPS - 44mm</p>
+                            <p class="price fw-bold text-primary mb-3">₹24,900</p>
+                            <button class="btn btn-primary w-100 add-to-cart" data-product="Apple Watch SE 2" data-price="24900">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="watch" data-price="19900" data-name="Apple Watch SE 1">
+                    <div class="product-card h-100">
+                        <div class="product-image">
+                            <img src="watch/SE/se 1.jpeg.webp" alt="Apple Watch SE 1" class="img-fluid">
+                        </div>
+                        <div class="product-info p-3">
+                            <h5>Apple Watch SE 1</h5>
+                            <p class="text-muted small mb-2">GPS - 44mm</p>
+                            <p class="price fw-bold text-primary mb-3">₹19,900</p>
+                            <button class="btn btn-primary w-100 add-to-cart" data-product="Apple Watch SE 1" data-price="19900">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- iPad (category-wise, descending) -->
+                <!-- iPad Pro -->
+                <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="ipad" data-price="119900" data-name="iPad Pro (8th Gen)">
+                    <div class="product-card h-100">
+                        <div class="product-image">
+                            <img src="ipad/ipad pro/pro 8th.jpeg.webp" alt="iPad Pro (8th Gen)" class="img-fluid">
+                        </div>
+                        <div class="product-info p-3">
+                            <h5>iPad Pro (8th Gen)</h5>
+                            <p class="text-muted small mb-2">256GB - Pro</p>
+                            <p class="price fw-bold text-primary mb-3">₹1,19,900</p>
+                            <button class="btn btn-primary w-100 add-to-cart" data-product="iPad Pro (8th Gen)" data-price="119900">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="ipad" data-price="109900" data-name="iPad Pro (7th Gen)">
+                    <div class="product-card h-100">
+                        <div class="product-image">
+                            <img src="ipad/ipad pro/pro 7th.jpeg.webp" alt="iPad Pro (7th Gen)" class="img-fluid">
+                        </div>
+                        <div class="product-info p-3">
+                            <h5>iPad Pro (7th Gen)</h5>
+                            <p class="text-muted small mb-2">256GB - Pro</p>
+                            <p class="price fw-bold text-primary mb-3">₹1,09,900</p>
+                            <button class="btn btn-primary w-100 add-to-cart" data-product="iPad Pro (7th Gen)" data-price="109900">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="ipad" data-price="99900" data-name="iPad Pro (6th Gen)">
+                    <div class="product-card h-100">
+                        <div class="product-image">
+                            <img src="ipad/ipad pro/pro 6th.jpeg.webp" alt="iPad Pro (6th Gen)" class="img-fluid">
+                        </div>
+                        <div class="product-info p-3">
+                            <h5>iPad Pro (6th Gen)</h5>
+                            <p class="text-muted small mb-2">256GB - Pro</p>
+                            <p class="price fw-bold text-primary mb-3">₹99,900</p>
+                            <button class="btn btn-primary w-100 add-to-cart" data-product="iPad Pro (6th Gen)" data-price="99900">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="ipad" data-price="89900" data-name="iPad Pro (5th Gen)">
+                    <div class="product-card h-100">
+                        <div class="product-image">
+                            <img src="ipad/ipad pro/pro 5th.jpeg.webp" alt="iPad Pro (5th Gen)" class="img-fluid">
+                        </div>
+                        <div class="product-info p-3">
+                            <h5>iPad Pro (5th Gen)</h5>
+                            <p class="text-muted small mb-2">256GB - Pro</p>
+                            <p class="price fw-bold text-primary mb-3">₹89,900</p>
+                            <button class="btn btn-primary w-100 add-to-cart" data-product="iPad Pro (5th Gen)" data-price="89900">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="ipad" data-price="79900" data-name="iPad Pro (4th Gen)">
+                    <div class="product-card h-100">
+                        <div class="product-image">
+                            <img src="ipad/ipad pro/pro 4th.jpeg.webp" alt="iPad Pro (4th Gen)" class="img-fluid">
+                        </div>
+                        <div class="product-info p-3">
+                            <h5>iPad Pro (4th Gen)</h5>
+                            <p class="text-muted small mb-2">256GB - Pro</p>
+                            <p class="price fw-bold text-primary mb-3">₹79,900</p>
+                            <button class="btn btn-primary w-100 add-to-cart" data-product="iPad Pro (4th Gen)" data-price="79900">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- iPad Air -->
+                <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="ipad" data-price="69900" data-name="iPad Air (7th Gen)">
+                    <div class="product-card h-100">
+                        <div class="product-image">
+                            <img src="ipad/ipad air/air 7th.jpeg.webp" alt="iPad Air (7th Gen)" class="img-fluid">
+                        </div>
+                        <div class="product-info p-3">
+                            <h5>iPad Air (7th Gen)</h5>
+                            <p class="text-muted small mb-2">128GB - Air</p>
+                            <p class="price fw-bold text-primary mb-3">₹69,900</p>
+                            <button class="btn btn-primary w-100 add-to-cart" data-product="iPad Air (7th Gen)" data-price="69900">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="ipad" data-price="64900" data-name="iPad Air (6th Gen)">
+                    <div class="product-card h-100">
+                        <div class="product-image">
+                            <img src="ipad/ipad air/air 6th.jpeg.webp" alt="iPad Air (6th Gen)" class="img-fluid">
+                        </div>
+                        <div class="product-info p-3">
+                            <h5>iPad Air (6th Gen)</h5>
+                            <p class="text-muted small mb-2">128GB - Air</p>
+                            <p class="price fw-bold text-primary mb-3">₹64,900</p>
+                            <button class="btn btn-primary w-100 add-to-cart" data-product="iPad Air (6th Gen)" data-price="64900">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="ipad" data-price="59900" data-name="iPad Air (5th Gen)">
+                    <div class="product-card h-100">
+                        <div class="product-image">
+                            <img src="ipad/ipad air/air 5th.jpeg.webp" alt="iPad Air (5th Gen)" class="img-fluid">
+                        </div>
+                        <div class="product-info p-3">
+                            <h5>iPad Air (5th Gen)</h5>
+                            <p class="text-muted small mb-2">128GB - Air</p>
+                            <p class="price fw-bold text-primary mb-3">₹59,900</p>
+                            <button class="btn btn-primary w-100 add-to-cart" data-product="iPad Air (5th Gen)" data-price="59900">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="ipad" data-price="54900" data-name="iPad Air (4th Gen)">
+                    <div class="product-card h-100">
+                        <div class="product-image">
+                            <img src="ipad/ipad air/air 4th.jpeg.webp" alt="iPad Air (4th Gen)" class="img-fluid">
+                        </div>
+                        <div class="product-info p-3">
+                            <h5>iPad Air (4th Gen)</h5>
+                            <p class="text-muted small mb-2">64GB - Air</p>
+                            <p class="price fw-bold text-primary mb-3">₹54,900</p>
+                            <button class="btn btn-primary w-100 add-to-cart" data-product="iPad Air (4th Gen)" data-price="54900">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="ipad" data-price="49900" data-name="iPad Air (3rd Gen)">
+                    <div class="product-card h-100">
+                        <div class="product-image">
+                            <img src="ipad/ipad air/air 3rd.jpeg.webp" alt="iPad Air (3rd Gen)" class="img-fluid">
+                        </div>
+                        <div class="product-info p-3">
+                            <h5>iPad Air (3rd Gen)</h5>
+                            <p class="text-muted small mb-2">64GB - Air</p>
+                            <p class="price fw-bold text-primary mb-3">₹49,900</p>
+                            <button class="btn btn-primary w-100 add-to-cart" data-product="iPad Air (3rd Gen)" data-price="49900">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- iPad mini -->
+                <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="ipad" data-price="59900" data-name="iPad mini (A17)">
+                    <div class="product-card h-100">
+                        <div class="product-image">
+                            <img src="ipad/ipad mini/mini A17.jpeg.webp" alt="iPad mini (A17)" class="img-fluid">
+                        </div>
+                        <div class="product-info p-3">
+                            <h5>iPad mini (A17)</h5>
+                            <p class="text-muted small mb-2">128GB - mini</p>
+                            <p class="price fw-bold text-primary mb-3">₹59,900</p>
+                            <button class="btn btn-primary w-100 add-to-cart" data-product="iPad mini (A17)" data-price="59900">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="ipad" data-price="54900" data-name="iPad mini (6th Gen)">
+                    <div class="product-card h-100">
+                        <div class="product-image">
+                            <img src="ipad/ipad mini/mini 6th.jpeg.webp" alt="iPad mini (6th Gen)" class="img-fluid">
+                        </div>
+                        <div class="product-info p-3">
+                            <h5>iPad mini (6th Gen)</h5>
+                            <p class="text-muted small mb-2">64GB - mini</p>
+                            <p class="price fw-bold text-primary mb-3">₹54,900</p>
+                            <button class="btn btn-primary w-100 add-to-cart" data-product="iPad mini (6th Gen)" data-price="54900">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="ipad" data-price="49900" data-name="iPad mini (5th Gen)">
+                    <div class="product-card h-100">
+                        <div class="product-image">
+                            <img src="ipad/ipad mini/mini 5th.jpeg.webp" alt="iPad mini (5th Gen)" class="img-fluid">
+                        </div>
+                        <div class="product-info p-3">
+                            <h5>iPad mini (5th Gen)</h5>
+                            <p class="text-muted small mb-2">64GB - mini</p>
+                            <p class="price fw-bold text-primary mb-3">₹49,900</p>
+                            <button class="btn btn-primary w-100 add-to-cart" data-product="iPad mini (5th Gen)" data-price="49900">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="ipad" data-price="44900" data-name="iPad mini (4th Gen)">
+                    <div class="product-card h-100">
+                        <div class="product-image">
+                            <img src="ipad/ipad mini/mini 4th.jpeg.webp" alt="iPad mini (4th Gen)" class="img-fluid">
+                        </div>
+                        <div class="product-info p-3">
+                            <h5>iPad mini (4th Gen)</h5>
+                            <p class="text-muted small mb-2">64GB - mini</p>
+                            <p class="price fw-bold text-primary mb-3">₹44,900</p>
+                            <button class="btn btn-primary w-100 add-to-cart" data-product="iPad mini (4th Gen)" data-price="44900">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="ipad" data-price="39900" data-name="iPad mini (3rd Gen)">
+                    <div class="product-card h-100">
+                        <div class="product-image">
+                            <img src="ipad/ipad mini/mini 3rd.jpeg.webp" alt="iPad mini (3rd Gen)" class="img-fluid">
+                        </div>
+                        <div class="product-info p-3">
+                            <h5>iPad mini (3rd Gen)</h5>
+                            <p class="text-muted small mb-2">64GB - mini</p>
+                            <p class="price fw-bold text-primary mb-3">₹39,900</p>
+                            <button class="btn btn-primary w-100 add-to-cart" data-product="iPad mini (3rd Gen)" data-price="39900">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- iPad -->
+                <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="ipad" data-price="44900" data-name="iPad (11th Gen)">
+                    <div class="product-card h-100">
+                        <div class="product-image">
+                            <img src="ipad/ipad/pad 11th.jpeg.webp" alt="iPad (11th Gen)" class="img-fluid">
+                        </div>
+                        <div class="product-info p-3">
+                            <h5>iPad (11th Gen)</h5>
+                            <p class="text-muted small mb-2">64GB - iPad</p>
+                            <p class="price fw-bold text-primary mb-3">₹44,900</p>
+                            <button class="btn btn-primary w-100 add-to-cart" data-product="iPad (11th Gen)" data-price="44900">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="ipad" data-price="39900" data-name="iPad (10th Gen)">
+                    <div class="product-card h-100">
+                        <div class="product-image">
+                            <img src="ipad/ipad/pad 10th.jpeg.webp" alt="iPad (10th Gen)" class="img-fluid">
+                        </div>
+                        <div class="product-info p-3">
+                            <h5>iPad (10th Gen)</h5>
+                            <p class="text-muted small mb-2">64GB - iPad</p>
+                            <p class="price fw-bold text-primary mb-3">₹39,900</p>
+                            <button class="btn btn-primary w-100 add-to-cart" data-product="iPad (10th Gen)" data-price="39900">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="ipad" data-price="34900" data-name="iPad (9th Gen)">
+                    <div class="product-card h-100">
+                        <div class="product-image">
+                            <img src="ipad/ipad/pad 9th.jpeg.webp" alt="iPad (9th Gen)" class="img-fluid">
+                        </div>
+                        <div class="product-info p-3">
+                            <h5>iPad (9th Gen)</h5>
+                            <p class="text-muted small mb-2">64GB - iPad</p>
+                            <p class="price fw-bold text-primary mb-3">₹34,900</p>
+                            <button class="btn btn-primary w-100 add-to-cart" data-product="iPad (9th Gen)" data-price="34900">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="ipad" data-price="29900" data-name="iPad (8th Gen)">
+                    <div class="product-card h-100">
+                        <div class="product-image">
+                            <img src="ipad/ipad/pad 8th.jpeg.webp" alt="iPad (8th Gen)" class="img-fluid">
+                        </div>
+                        <div class="product-info p-3">
+                            <h5>iPad (8th Gen)</h5>
+                            <p class="text-muted small mb-2">32GB - iPad</p>
+                            <p class="price fw-bold text-primary mb-3">₹29,900</p>
+                            <button class="btn btn-primary w-100 add-to-cart" data-product="iPad (8th Gen)" data-price="29900">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="ipad" data-price="24900" data-name="iPad (7th Gen)">
+                    <div class="product-card h-100">
+                        <div class="product-image">
+                            <img src="ipad/ipad/pad 7th.jpeg.webp" alt="iPad (7th Gen)" class="img-fluid">
+                        </div>
+                        <div class="product-info p-3">
+                            <h5>iPad (7th Gen)</h5>
+                            <p class="text-muted small mb-2">32GB - iPad</p>
+                            <p class="price fw-bold text-primary mb-3">₹24,900</p>
+                            <button class="btn btn-primary w-100 add-to-cart" data-product="iPad (7th Gen)" data-price="24900">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MacBook (category-wise) -->
+                <!-- Pro Models (descending) -->
+                <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="mac" data-price="249900" data-name="MacBook Pro (M5)">
+                    <div class="product-card h-100">
+                        <div class="product-image">
+                            <img src="macbook/m5/m5 pro.jpeg.webp" alt="MacBook Pro (M5)" class="img-fluid">
+                        </div>
+                        <div class="product-info p-3">
+                            <h5>MacBook Pro (M5)</h5>
+                            <p class="text-muted small mb-2">Apple Silicon - 16 inch</p>
+                            <p class="price fw-bold text-primary mb-3">₹2,49,900</p>
+                            <button class="btn btn-primary w-100 add-to-cart" data-product="MacBook Pro (M5)" data-price="249900">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="mac" data-price="219900" data-name="MacBook Pro (M4)">
+                    <div class="product-card h-100">
+                        <div class="product-image">
+                            <img src="macbook/m4/m4 pro.jpeg.webp" alt="MacBook Pro (M4)" class="img-fluid">
+                        </div>
+                        <div class="product-info p-3">
+                            <h5>MacBook Pro (M4)</h5>
+                            <p class="text-muted small mb-2">Apple Silicon - 16 inch</p>
+                            <p class="price fw-bold text-primary mb-3">₹2,19,900</p>
+                            <button class="btn btn-primary w-100 add-to-cart" data-product="MacBook Pro (M4)" data-price="219900">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="mac" data-price="199900" data-name="MacBook Pro (M3)">
+                    <div class="product-card h-100">
+                        <div class="product-image">
+                            <img src="macbook/m3/m3 pro.jpeg.webp" alt="MacBook Pro (M3)" class="img-fluid">
+                        </div>
+                        <div class="product-info p-3">
+                            <h5>MacBook Pro (M3)</h5>
+                            <p class="text-muted small mb-2">Apple Silicon - 16 inch</p>
+                            <p class="price fw-bold text-primary mb-3">₹1,99,900</p>
+                            <button class="btn btn-primary w-100 add-to-cart" data-product="MacBook Pro (M3)" data-price="199900">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="mac" data-price="149900" data-name="MacBook Pro (M2)">
+                    <div class="product-card h-100">
+                        <div class="product-image">
+                            <img src="macbook/m2/m2 pro.jpeg.webp" alt="MacBook Pro (M2)" class="img-fluid">
+                        </div>
+                        <div class="product-info p-3">
+                            <h5>MacBook Pro (M2)</h5>
+                            <p class="text-muted small mb-2">Apple Silicon - 14 inch</p>
+                            <p class="price fw-bold text-primary mb-3">₹1,49,900</p>
+                            <button class="btn btn-primary w-100 add-to-cart" data-product="MacBook Pro (M2)" data-price="149900">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="mac" data-price="129900" data-name="MacBook Pro (M1)">
+                    <div class="product-card h-100">
+                        <div class="product-image">
+                            <img src="macbook/m1/m1 pro.jpeg.webp" alt="MacBook Pro (M1)" class="img-fluid">
+                        </div>
+                        <div class="product-info p-3">
+                            <h5>MacBook Pro (M1)</h5>
+                            <p class="text-muted small mb-2">Apple Silicon - 14 inch</p>
+                            <p class="price fw-bold text-primary mb-3">₹1,29,900</p>
+                            <button class="btn btn-primary w-100 add-to-cart" data-product="MacBook Pro (M1)" data-price="129900">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Air Models (descending) -->
+                <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="mac" data-price="139900" data-name="MacBook Air (M4)">
+                    <div class="product-card h-100">
+                        <div class="product-image">
+                            <img src="macbook/m4/m4 air.jpeg.webp" alt="MacBook Air (M4)" class="img-fluid">
+                        </div>
+                        <div class="product-info p-3">
+                            <h5>MacBook Air (M4)</h5>
+                            <p class="text-muted small mb-2">Apple Silicon - 13 inch</p>
+                            <p class="price fw-bold text-primary mb-3">₹1,39,900</p>
+                            <button class="btn btn-primary w-100 add-to-cart" data-product="MacBook Air (M4)" data-price="139900">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="mac" data-price="129900" data-name="MacBook Air (M3)">
+                    <div class="product-card h-100">
+                        <div class="product-image">
+                            <img src="macbook/m3/m3 air.jpeg.webp" alt="MacBook Air (M3)" class="img-fluid">
+                        </div>
+                        <div class="product-info p-3">
+                            <h5>MacBook Air (M3)</h5>
+                            <p class="text-muted small mb-2">Apple Silicon - 13 inch</p>
+                            <p class="price fw-bold text-primary mb-3">₹1,29,900</p>
+                            <button class="btn btn-primary w-100 add-to-cart" data-product="MacBook Air (M3)" data-price="129900">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="mac" data-price="109900" data-name="MacBook Air (M2)">
+                    <div class="product-card h-100">
+                        <div class="product-image">
+                            <img src="macbook/m2/m2 air.jpeg.webp" alt="MacBook Air (M2)" class="img-fluid">
+                        </div>
+                        <div class="product-info p-3">
+                            <h5>MacBook Air (M2)</h5>
+                            <p class="text-muted small mb-2">Apple Silicon - 13 inch</p>
+                            <p class="price fw-bold text-primary mb-3">₹1,09,900</p>
+                            <button class="btn btn-primary w-100 add-to-cart" data-product="MacBook Air (M2)" data-price="109900">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="mac" data-price="99900" data-name="MacBook Air (M1)">
+                    <div class="product-card h-100">
+                        <div class="product-image">
+                            <img src="macbook/m1/m1 air.jpeg.webp" alt="MacBook Air (M1)" class="img-fluid">
+                        </div>
+                        <div class="product-info p-3">
+                            <h5>MacBook Air (M1)</h5>
+                            <p class="text-muted small mb-2">Apple Silicon - 13 inch</p>
+                            <p class="price fw-bold text-primary mb-3">₹99,900</p>
+                            <button class="btn btn-primary w-100 add-to-cart" data-product="MacBook Air (M1)" data-price="99900">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AirPods (category-wise, descending) -->
+                <!-- Max -->
+                <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="airpods" data-price="59900" data-name="AirPods Max">
+                    <div class="product-card h-100">
+                        <div class="product-image">
+                            <img src="airpods/max/max.jpeg.webp" alt="AirPods Max" class="img-fluid">
+                        </div>
+                        <div class="product-info p-3">
+                            <h5>AirPods Max</h5>
+                            <p class="text-muted small mb-2">Over‑ear headphones</p>
+                            <p class="price fw-bold text-primary mb-3">₹59,900</p>
+                            <button class="btn btn-primary w-100 add-to-cart" data-product="AirPods Max" data-price="59900">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pro -->
+                <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="airpods" data-price="27900" data-name="AirPods Pro (3rd Gen)">
+                    <div class="product-card h-100">
+                        <div class="product-image">
+                            <img src="airpods/pro/pro 3.jpeg.webp" alt="AirPods Pro (3rd Gen)" class="img-fluid">
+                        </div>
+                        <div class="product-info p-3">
+                            <h5>AirPods Pro (3rd Gen)</h5>
+                            <p class="text-muted small mb-2">Noise Cancellation</p>
+                            <p class="price fw-bold text-primary mb-3">₹27,900</p>
+                            <button class="btn btn-primary w-100 add-to-cart" data-product="AirPods Pro (3rd Gen)" data-price="27900">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="airpods" data-price="24900" data-name="AirPods Pro (2nd Gen)">
+                    <div class="product-card h-100">
+                        <div class="product-image">
+                            <img src="airpods/pro/pro 2.jpeg.webp" alt="AirPods Pro (2nd Gen)" class="img-fluid">
+                        </div>
+                        <div class="product-info p-3">
+                            <h5>AirPods Pro (2nd Gen)</h5>
+                            <p class="text-muted small mb-2">Noise Cancellation</p>
+                            <p class="price fw-bold text-primary mb-3">₹24,900</p>
+                            <button class="btn btn-primary w-100 add-to-cart" data-product="AirPods Pro (2nd Gen)" data-price="24900">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="airpods" data-price="19900" data-name="AirPods Pro (1st Gen)">
+                    <div class="product-card h-100">
+                        <div class="product-image">
+                            <img src="airpods/pro/pro 1.jpeg.webp" alt="AirPods Pro (1st Gen)" class="img-fluid">
+                        </div>
+                        <div class="product-info p-3">
+                            <h5>AirPods Pro (1st Gen)</h5>
+                            <p class="text-muted small mb-2">Noise Cancellation</p>
+                            <p class="price fw-bold text-primary mb-3">₹19,900</p>
+                            <button class="btn btn-primary w-100 add-to-cart" data-product="AirPods Pro (1st Gen)" data-price="19900">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AirPods -->
+                <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="airpods" data-price="17900" data-name="AirPods (4th Gen)">
+                    <div class="product-card h-100">
+                        <div class="product-image">
+                            <img src="airpods/pods/pods 4.jpeg.webp" alt="AirPods (4th Gen)" class="img-fluid">
+                        </div>
+                        <div class="product-info p-3">
+                            <h5>AirPods (4th Gen)</h5>
+                            <p class="text-muted small mb-2">Wireless earbuds</p>
+                            <p class="price fw-bold text-primary mb-3">₹17,900</p>
+                            <button class="btn btn-primary w-100 add-to-cart" data-product="AirPods (4th Gen)" data-price="17900">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="airpods" data-price="14900" data-name="AirPods (3rd Gen)">
+                    <div class="product-card h-100">
+                        <div class="product-image">
+                            <img src="airpods/pods/pods 3.jpeg.webp" alt="AirPods (3rd Gen)" class="img-fluid">
+                        </div>
+                        <div class="product-info p-3">
+                            <h5>AirPods (3rd Gen)</h5>
+                            <p class="text-muted small mb-2">Wireless earbuds</p>
+                            <p class="price fw-bold text-primary mb-3">₹14,900</p>
+                            <button class="btn btn-primary w-100 add-to-cart" data-product="AirPods (3rd Gen)" data-price="14900">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="airpods" data-price="12900" data-name="AirPods (2nd Gen)">
+                    <div class="product-card h-100">
+                        <div class="product-image">
+                            <img src="airpods/pods/pods 2.jpeg.webp" alt="AirPods (2nd Gen)" class="img-fluid">
+                        </div>
+                        <div class="product-info p-3">
+                            <h5>AirPods (2nd Gen)</h5>
+                            <p class="text-muted small mb-2">Wireless earbuds</p>
+                            <p class="price fw-bold text-primary mb-3">₹12,900</p>
+                            <button class="btn btn-primary w-100 add-to-cart" data-product="AirPods (2nd Gen)" data-price="12900">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-category="airpods" data-price="9900" data-name="AirPods (1st Gen)">
+                    <div class="product-card h-100">
+                        <div class="product-image">
+                            <img src="airpods/pods/pods 1.jpeg.webp" alt="AirPods (1st Gen)" class="img-fluid">
+                        </div>
+                        <div class="product-info p-3">
+                            <h5>AirPods (1st Gen)</h5>
+                            <p class="text-muted small mb-2">Wireless earbuds</p>
+                            <p class="price fw-bold text-primary mb-3">₹9,900</p>
+                            <button class="btn btn-primary w-100 add-to-cart" data-product="AirPods (1st Gen)" data-price="9900">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h5><i class="bi bi-apple"></i> MyApple</h5>
+                    <p class="text-muted">The best place to buy Apple products.</p>
+                </div>
+                <div class="col-md-3">
+                    <h5>Shop</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="categories.html?category=iphone" class="text-muted text-decoration-none">iPhone</a></li>
+                        <li><a href="categories.html?category=mac" class="text-muted text-decoration-none">Mac</a></li>
+                        <li><a href="categories.html?category=ipad" class="text-muted text-decoration-none">iPad</a></li>
+                        <li><a href="categories.html?category=watch" class="text-muted text-decoration-none">Watch</a></li>
+                        <li><a href="categories.html?category=airpods" class="text-muted text-decoration-none">AirPods</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Account</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="login.html" class="text-muted text-decoration-none">Login</a></li>
+                        <li><a href="signup.html" class="text-muted text-decoration-none">Sign Up</a></li>
+                        <li><a href="payment.html" class="text-muted text-decoration-none">Cart</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>About</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="about.html" class="text-muted text-decoration-none">About Us</a></li>
+                        <li><a href="#" class="text-muted text-decoration-none">Contact</a></li>
+                        <li><a href="#" class="text-muted text-decoration-none">Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center text-muted">
+                <p>&copy; 2024 MyApple. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Product Modal -->
+    <div class="modal fade" id="productModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalTitle">Product Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=600&h=600&fit=crop" alt="Product" class="img-fluid" id="productModalImage">
+                        </div>
+                        <div class="col-md-6">
+                            <h3 id="productModalName"></h3>
+                            <p class="text-muted" id="productModalDesc"></p>
+                            <p class="h4 text-primary" id="productModalPrice"></p>
+                            <hr>
+                            <h6>Features:</h6>
+                            <ul id="productModalFeatures"></ul>
+                            <button class="btn btn-primary w-100 mt-3" id="modalAddToCart">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
+

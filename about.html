@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - MyApple</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="bi bi-apple"></i> MyApple
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="categories.html">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item" id="navAuth">
+                        <a class="nav-link" href="login.html">Login</a>
+                    </li>
+                    <li class="nav-item" id="navAuthSignup">
+                        <a class="nav-link btn btn-primary text-white ms-2" href="signup.html">Sign Up</a>
+                    </li>
+                    <li class="nav-item dropdown" id="navProfile" style="display: none;">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-person-circle"></i> <span id="profileNameSpan">Profile</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="profile.html"><i class="bi bi-person"></i> Profile</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item text-danger" href="#" id="navLogout"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="payment.html"><i class="bi bi-cart3"></i> Cart</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="about-hero py-5 mt-5">
+        <div class="container text-center py-5">
+            <h1 class="display-2 fw-bold mb-4">About MyApple</h1>
+            <p class="lead">Innovation meets excellence in every product</p>
+        </div>
+    </section>
+
+    <!-- About Content -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-center mb-5">
+                <div class="col-md-6">
+                    <h2 class="fw-bold mb-4">Our Story</h2>
+                    <p class="lead">MyApple was founded with a vision to bring premium technology products to customers worldwide. We believe in innovation, quality, and exceptional customer service.</p>
+                    <p>Since our inception, we've been committed to providing the latest and greatest in technology. Our team of experts carefully selects each product to ensure it meets our high standards of quality and performance.</p>
+                </div>
+                <div class="col-md-6">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop" alt="About Us" class="img-fluid rounded shadow">
+                </div>
+            </div>
+
+            <div class="row align-items-center mb-5">
+                <div class="col-md-6 order-md-2">
+                    <h2 class="fw-bold mb-4">Our Mission</h2>
+                    <p class="lead">To make premium technology accessible to everyone while maintaining the highest standards of quality and customer satisfaction.</p>
+                    <p>We strive to create an exceptional shopping experience that combines cutting-edge products with personalized service. Every customer is important to us, and we go the extra mile to ensure your satisfaction.</p>
+                </div>
+                <div class="col-md-6 order-md-1">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop" alt="Mission" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5 fw-bold">Our Values</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="value-card text-center p-4">
+                        <i class="bi bi-star-fill display-4 text-warning mb-3"></i>
+                        <h4>Quality</h4>
+                        <p>We only offer products that meet our rigorous quality standards.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="value-card text-center p-4">
+                        <i class="bi bi-heart-fill display-4 text-danger mb-3"></i>
+                        <h4>Customer First</h4>
+                        <p>Your satisfaction is our top priority in everything we do.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="value-card text-center p-4">
+                        <i class="bi bi-lightning-fill display-4 text-primary mb-3"></i>
+                        <h4>Innovation</h4>
+                        <p>We stay ahead with the latest technology and trends.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row text-center">
+            <div class="col-md-3 mb-4">
+                <h2 class="display-4 fw-bold text-primary">10K+</h2>
+                <p class="lead">Happy Customers</p>
+            </div>
+            <div class="col-md-3 mb-4">
+                <h2 class="display-4 fw-bold text-primary">500+</h2>
+                <p class="lead">Products</p>
+            </div>
+            <div class="col-md-3 mb-4">
+                <h2 class="display-4 fw-bold text-primary">50+</h2>
+                <p class="lead">Countries</p>
+            </div>
+            <div class="col-md-3 mb-4">
+                <h2 class="display-4 fw-bold text-primary">24/7</h2>
+                <p class="lead">Support</p>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h5><i class="bi bi-apple"></i> MyApple</h5>
+                    <p class="text-muted">The best place to buy Apple products.</p>
+                </div>
+                <div class="col-md-3">
+                    <h5>Shop</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="categories.html?category=iphone" class="text-muted text-decoration-none">iPhone</a></li>
+                        <li><a href="categories.html?category=mac" class="text-muted text-decoration-none">Mac</a></li>
+                        <li><a href="categories.html?category=ipad" class="text-muted text-decoration-none">iPad</a></li>
+                        <li><a href="categories.html?category=watch" class="text-muted text-decoration-none">Watch</a></li>
+                        <li><a href="categories.html?category=airpods" class="text-muted text-decoration-none">AirPods</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Account</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="login.html" class="text-muted text-decoration-none">Login</a></li>
+                        <li><a href="signup.html" class="text-muted text-decoration-none">Sign Up</a></li>
+                        <li><a href="payment.html" class="text-muted text-decoration-none">Cart</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>About</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="about.html" class="text-muted text-decoration-none">About Us</a></li>
+                        <li><a href="#" class="text-muted text-decoration-none">Contact</a></li>
+                        <li><a href="#" class="text-muted text-decoration-none">Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center text-muted">
+                <p>&copy; 2024 MyApple. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
+
